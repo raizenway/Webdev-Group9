@@ -910,6 +910,10 @@ body {
   margin-top: 0.25rem;
 }
 
+.mt-4{
+  margin-top: 1rem;
+}
+
 .mt-12{
   margin-top: 3rem;
 }
@@ -920,6 +924,10 @@ body {
 
 .mt-16{
   margin-top: 4rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
 }
 
 .mt-4{
@@ -1042,8 +1050,28 @@ body {
   width: 0.75rem;
 }
 
-.w-4\/12{
+.w-33perc{
   width: 33.333333%;
+}
+
+.w-66perc{
+  width: 66.666667%;
+}
+
+.w-20perc{
+  width: 20%;
+}
+
+.w-80perc{
+  width: 80%;
+}
+
+.w-10perc{
+  width: 10%;
+}
+
+.w-90perc{
+  width: 90%;
 }
 
 .w-60{
@@ -1054,9 +1082,6 @@ body {
   width: 16rem;
 }
 
-.w-8\/12{
-  width: 66.666667%;
-}
 
 .w-\[120px\]{
   width: 120px;
