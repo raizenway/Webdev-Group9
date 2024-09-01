@@ -82,30 +82,34 @@
                   <option value="china">[Genre]</option>
                   <option value="korea">[Genre]</option>
                 </select>
-                <select id="availability" name="countries" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <select id="status" name="status" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option value="" disabled selected>Status</option>
-                  <option value="japan">Japan</option>
-                  <option value="china">China</option>
-                  <option value="korea">Korea</option>
+                  <option value="japan">On Going</option>
+                  <option value="china">Finished</option>
+                  <option value="korea">Coming Soon</option>
                 </select>
-                <select id="availability" name="countries" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <select id="availability" name="availability" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option value="" disabled selected>Availability</option>
-                  <option value="japan">Japan</option>
-                  <option value="china">China</option>
-                  <option value="korea">Korea</option>
+                  <option value="japan">[Availability]</option>
+                  <option value="china">[Availability]</option>
+                  <option value="korea">[Availability]</option>
                 </select>
-                <select id="award" name="countries" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <select id="award" name="award" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option value="" disabled selected>Award</option>
-                  <option value="japan">Japan</option>
-                  <option value="china">China</option>
-                  <option value="korea">Korea</option>
+                  <option value="japan">[Award]</option>
+                  <option value="china">[Award]</option>
+                  <option value="korea">[Award]</option>
                 </select>
                 <p class="mt-1 py-2 ml-2 mr-4" style="text-align: left;">Sorted By</p>
-                <select id="award" name="countries" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option value="" disabled selected>Alphabetics</option>
-                  <option value="japan">Japan</option>
-                  <option value="china">China</option>
-                  <option value="korea">Korea</option>
+                <select id="sortedby" name="sortedby" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="alphabetics" selected>Alphabetics</option>
+                  <option value="release">Release</option>
+                  <option value="rates">Rates</option>
+                  <option value="views">Views</option>
+                </select>
+                <select id="sort" name="sort" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="alphabetics" selected>Ascending</option>
+                  <option value="release">Descending</option>
                 </select>
               </div>
             </div>
@@ -715,12 +719,11 @@
             />
           </a>
           <p class="mb-8 max-w-[270px] text-base text-gray-7">
-            We create digital experiences for brands and companies by using
-            technology.
+            Discover your own favorite Drama with us.
           </p>
           <div class="-mx-3 flex items-center">
             <a
-              href="javascript:void(0)"
+              href="https://web.facebook.com/HimakomPolbanOfficial" target="_blank"
               class="px-3 text-gray-7 hover:text-white"
             >
               <svg
@@ -737,7 +740,7 @@
               </svg>
             </a>
             <a
-              href="javascript:void(0)"
+              href="https://x.com/himakompolban" target="_blank"
               class="px-3 text-gray-7 hover:text-white"
             >
               <svg
@@ -754,7 +757,7 @@
               </svg>
             </a>
             <a
-              href="javascript:void(0)"
+              href="https://www.instagram.com/himakompolban/" target="_blank"
               class="px-3 text-gray-7 hover:text-white"
             >
               <svg
@@ -776,27 +779,12 @@
                 />
               </svg>
             </a>
-            <a
-              href="javascript:void(0)"
-              class="px-3 text-gray-7 hover:text-white"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="fill-current"
-              >
-                <path
-                  d="M18.8065 1.8335H3.16399C2.42474 1.8335 1.83334 2.42489 1.83334 3.16414V18.8362C1.83334 19.5459 2.42474 20.1668 3.16399 20.1668H18.7473C19.4866 20.1668 20.078 19.5754 20.078 18.8362V3.13457C20.1371 2.42489 19.5457 1.8335 18.8065 1.8335ZM7.24464 17.4168H4.55379V8.69371H7.24464V17.4168ZM5.88443 7.48135C4.99733 7.48135 4.31721 6.77167 4.31721 5.91414C4.31721 5.05661 5.0269 4.34694 5.88443 4.34694C6.74196 4.34694 7.45163 5.05661 7.45163 5.91414C7.45163 6.77167 6.8011 7.48135 5.88443 7.48135ZM17.4463 17.4168H14.7554V13.1883C14.7554 12.183 14.7258 10.8523 13.336 10.8523C11.9167 10.8523 11.7097 11.976 11.7097 13.0996V17.4168H9.01884V8.69371H11.6506V9.90608H11.6801C12.0645 9.1964 12.9221 8.48672 14.2527 8.48672C17.0027 8.48672 17.5054 10.2609 17.5054 12.6856V17.4168H17.4463Z"
-                />
-              </svg>
-            </a>
+            
           </div>
         </div>
       </div>
-      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+      <!-- kategori informasi -->
+      <!-- <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
         <div class="mb-10 w-full">
           <h4 class="mb-9 text-lg font-semibold text-white">About Us</h4>
           <ul>
@@ -953,7 +941,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -962,7 +950,7 @@
   >
     <div class="container">
       <div class="-mx-4 flex flex-wrap">
-        <div class="w-full px-4 md:w-2/3 lg:w-1/2">
+        <!-- <div class="w-full px-4 md:w-2/3 lg:w-1/2">
           <div class="my-1">
             <div
               class="-mx-3 flex items-center justify-center md:justify-start"
@@ -987,8 +975,8 @@
               </a>
             </div>
           </div>
-        </div>
-        <div class="w-full px-4 md:w-1/3 lg:w-1/2">
+        </div> -->
+        <div class="w-full px-4">
           <div class="my-1 flex justify-center md:justify-end">
             <p class="text-base text-gray-7">
               Designed and Developed by
