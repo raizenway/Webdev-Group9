@@ -163,6 +163,7 @@
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+  z-index: 10;
 }
 
 .animated {

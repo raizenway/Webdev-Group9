@@ -22,40 +22,117 @@
 
 <body>
   <!-- ====== Navbar Section Start -->
-  <div class="fixed header left-0 top-0 z-40 flex w-full items-center bg-dark">
-  <div class="flex items-center justify-between w-full">
-    <div class="flex items-center">
-      <div class="w-60 max-w-full px-4">
-        <a href="index.html" class="navbar-logo block w-full py-5">
-          <img src="assets/images/logo/logo-white.svg" alt="logo" class="header-logo w-full" />
-        </a>
-      </div>
-      <div>
-        <form>
+  <div class="flex-col fixed header left-0 top-0 z-40 flex w-full items-center bg-dark">
+
+    <!-- DESKTOP -->
+    <div class="flex items-center justify-between w-full">
+      <div class="flex items-center w-full">
+        <!-- logo -->
+        <div class="w-60 max-w-full px-4 hideOnMobile">
+          <a href="index.html" class="navbar-logo block w-full py-5">
+            <img src="assets/images/logo/logo-white.svg" alt="logo" class="header-logo w-full" />
+          </a>
+        </div>
+        <!-- fitur -->
+        <div class="w-full">
+          <div class="flex w-full justify-between">
+            <!-- form -->
           <div>
-            <input type="text" placeholder="Cari judul"
-              class="w-full px-10 py-3 text-base transition bg-transparent border rounded-md outline-none border-stroke dark:border-dark-3 text-white placeholder:text-dark-6 focus:border-primary dark:focus:border-primary focus-visible:shadow-none" />
+            <form class="flex items-center gap-3">
+              <div class="hideOnMobile">
+                <input type="text" placeholder="Masukkan judul"
+                  class="w-full px-10 py-3 text-base transition bg-transparent border rounded-md outline-none border-stroke dark:border-dark-3 text-white placeholder:text-dark-6 focus:border-primary dark:focus:border-primary focus-visible:shadow-none" />
+              </div>
+              <div class="hideOnMobile">
+                <a
+                    href="search-result.html"
+                    class=" px-5 py-3 text-base text-white transition duration-300 ease-in-out border rounded-md cursor-pointer border-white bg-dark hover:bg-white hover:text-dark">
+                  Telusuri
+                </a>
+              </div>
+            </form>
           </div>
-        </form>
+          <!-- autentikasi -->
+          <div class="hideOnMobile sm:flex items-center mr-4">
+            <a
+              href="signin.html"
+              class="loginBtn px-[22px] py-2 text-base font-medium text-white hover:text-primary"
+            >
+              Sign In
+            </a>
+            <a
+              href="signup.html"
+              class="signUpBtn rounded-md bg-white bg-opacity-20 px-6 py-2 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
+            >
+              Sign Up
+            </a>
+          </div>
+          </div>
+        </div>
       </div>
     </div>
-    
-    <div class="hidden sm:flex items-center mr-4">
-      <a
-        href="signin.html"
-        class="loginBtn px-[22px] py-2 text-base font-medium text-white hover:text-primary"
-      >
-        Sign In
-      </a>
-      <a
-        href="signup.html"
-        class="signUpBtn rounded-md bg-white bg-opacity-20 px-6 py-2 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
-      >
-        Sign Up
-      </a>
+
+    <!-- MOBILE -->
+    <div class="flex items-center w-full">
+      <div class="flex items-center w-full">
+        <!-- logo -->
+        <div class="w-60 max-w-full px-4 hideOnDesktop">
+          <a href="index.html" class="navbar-logo block w-full py-5">
+            <img src="assets/images/logo/logo-white.svg" alt="logo" class="header-logo w-full" />
+          </a>
+        </div>
+        <!-- fitur -->
+
+        <div class="w-full flex justify-end items-center">
+            <!-- autentikasi -->
+            <div class="sm:flex items-center">
+              <a href="signin.html" class="hideOnDesktop loginBtn px-2 text-sm font-medium text-white hover:text-primary">
+                Sign In
+              </a>
+              <a href="signup.html" class="hideOnDesktop signUpBtn rounded-md bg-white bg-opacity-20 px-2 py-2 text-sm font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark">
+                Sign Up
+              </a>
+            </div>
+            <!-- SEARCH BUTTON -->
+            <div class="searchButton p-4" onclick="showSearch()">
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></a>
+            </div>
+            <!-- CANCEL BUTTON -->
+            <div class="cancelButton p-4" onclick="hideSearchForm()">
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            </div>
+            <!-- MENU BUTTON -->
+            <div class="sidebarButton mr-3" onclick="showSidebar()">
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+            </div>
+            <!-- CANCEL BUTTON -->
+            <div class="closeButton mr-3" onclick="hideSidebar()">
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            </div>
+        </div>
+      </div>
     </div>
+
+        <!-- FORM -->
+          <div class="searchForm">
+            <form class="flex items-center gap-1 mx-2 my-2">
+              <div class="hideOnDesktop">
+                <input type="text" placeholder="Masukkan judul"
+                  class="w-full px-10 py-3 text-base transition bg-transparent border rounded-md outline-none border-stroke dark:border-dark-3 text-white placeholder:text-dark-6 focus:border-primary dark:focus:border-primary focus-visible:shadow-none" />
+              </div>
+              <div class="hideOnDesktop">
+                <a
+                    href="search-result.html"
+                    class="px-5 py-3 mx-2 text-base text-white transition duration-300 ease-in-out border rounded-md cursor-pointer border-white bg-dark hover:bg-white hover:text-dark">
+                  Telusuri
+                </a>
+              </div>
+            </form>
+          </div>
+    
+  
+
   </div>
-</div>
 
   <!-- ====== Navbar Section End -->
 
@@ -63,9 +140,9 @@
   <!-- ====== Team Section End -->
 
   <!-- ====== Catalogue Section Start -->
-  <div class="flex mt-20 justify-center">
-    <!-- Navbar -->
-    <div class="w-1/10 bg-dark">
+  <div class="flex mt-16 justify-center">
+    <!-- DESKTOP SIDEBAR-->
+    <div class="hideOnMobile w-1/10 bg-dark hide">
       <a class="mx-8 mt-8 mb-4 inline-block text-xl font-semibold text-white dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
         Admin
       </a>
@@ -83,17 +160,40 @@
       </a>
       <a href="#" class="mx-8 flex py-2 text-base font-medium text-white hover:text-primary">
         Korea
-      </a>
-           
+      </a>           
     </div>
+
+    <!-- MOBILE SIDEBAR-->
+    <div class="fixed hideOnDesktop sidebar flex-col w-full h-full hide p-10 z-50" style="background-color: rgba(17, 24, 40, 0.9);">
+      <a class="mx-8 mb-4 inline-block text-xl font-semibold text-white dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+        Admin
+      </a>
+      <a href="cms-awards.html" class="mx-8 flex py-2 text-base font-medium text-white hover:text-primary">
+        Content Management
+      </a>
+      <h1 class="mx-8 mt-4 mb-4 inline-block text-xl font-semibold text-white dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+      Region
+      </h1>
+      <a href="#" class="mx-8 flex py-2 text-base font-medium text-white hover:text-primary">
+        Jepang
+      </a>
+      <a href="#" class="mx-8 flex py-2 text-base font-medium text-white hover:text-primary">
+        Cina
+      </a>
+      <a href="#" class="mx-8 flex py-2 text-base font-medium text-white hover:text-primary">
+        Korea
+      </a>           
+    </div>
+
+    
     <!-- konten -->
     <div class="w-9/10 pb-10 lg:pb-20 lg:pt-[]">
       <div class="container mx-auto">
-        <!-- FILTER -->
-        <div class="">
+        <!-- FILTER DESKTOP-->
+        <div class="hideOnMobile">
           <div class="w-full px-4">
             <div class="mb-7 mt-12 text-center">
-              <div class="flex gap-1">
+              <div class="flex gap-1 sm:flex-col ">
                 <p class="mt-1 py-2 mr-4" style="text-align: left;">Filtered By</p>
                 <select id="year" name="year" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option value="" disabled selected>[Year]</option>
@@ -141,11 +241,338 @@
           </div>
           <!-- button submit -->
           <div class="flex justify-center mb-10">
-            <input type="submit" value="Submit"
-              class="w-64 px-5 py-3 text-base text-white transition duration-300 ease-in-out border rounded-md cursor-pointer border-white bg-dark hover:bg-blue-dark" />
+            <a
+                href="search-result.html"
+                class="w-64 px-5 py-3 text-base text-white text-center transition duration-300 ease-in-out border rounded-md cursor-pointer border-white bg-dark hover:bg-blue-dark">
+            Submit
+            </a>
           </div>
         </div>
+
+        <!-- FILTER MOBILE-->
+        <div class="hideOnDesktop">
+          <div class="w-full px-4">
+            <div class="mb-7 mt-12 text-center">
+              <!-- button -->
+               <div class="flex justify-end">
+                <!-- filter -->
+                  <div class="filterButton mr-3 items-center" onclick="showFilter()">
+                    <a href="#">Filter</a>
+                    <a class="" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#111928"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg></a>
+                  </div>
+
+                <!-- hide filter -->
+                <div class="hideFilterButton mr-3" onclick="hideFilter()">
+                  
+                  <a class="" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#111928"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+                </div>
+                  
+                <!-- sort -->
+                  <div class="sortButton mr-3 items-center" onclick="showSort()">
+                    <a href="#">Sort</a>
+                    <a class="" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#111928"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg></a>
+                  </div>
+
+                <!-- hide sort -->
+                <div class="hideSortButton mr-3" onclick="hideSort()">
+                  <a class="" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#111928"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+                </div>
+                  
+                
+               </div>
+
+              <!-- filter and sort  -->
+              <div class="gap-1 sm:flex-col">
+              <!-- filter -->
+              <div class="filterMobile gap-1 sm:flex-col">
+                <p class="mt-1 py-2 mr-4" style="text-align: left;">Filtered By</p>
+                <select id="year" name="year" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="" disabled selected>[Year]</option>
+                  <option value="japan">[Year]</option>
+                  <option value="china">[Year]</option>
+                  <option value="korea">[Year]</option>
+                </select>
+                <select id="genre" name="genre" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="" disabled selected>Genre</option>
+                  <option value="japan">[Genre]</option>
+                  <option value="china">[Genre]</option>
+                  <option value="korea">[Genre]</option>
+                </select>
+                <select id="status" name="status" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="" disabled selected>Status</option>
+                  <option value="japan">On Going</option>
+                  <option value="china">Finished</option>
+                  <option value="korea">Coming Soon</option>
+                </select>
+                <select id="availability" name="availability" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="" disabled selected>Availability</option>
+                  <option value="japan">[Availability]</option>
+                  <option value="china">[Availability]</option>
+                  <option value="korea">[Availability]</option>
+                </select>
+                <select id="award" name="award" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="" disabled selected>Award</option>
+                  <option value="japan">[Award]</option>
+                  <option value="china">[Award]</option>
+                  <option value="korea">[Award]</option>
+                </select>
+                <!-- button -->
+                <div class="flex pt-2 justify-center mb-10">
+                  <a
+                      href="search-result.html"
+                      class="w-64 mt-3 px-5 p-3 text-base text-white text-center transition duration-300 ease-in-out border rounded-md cursor-pointer border-white bg-dark hover:bg-blue-dark">
+                  Submit
+                  </a>
+                </div>
+                </div>
+
+                <!-- sort -->
+                <div class="sortMobile gap-1 p- sm:flex-col">
+                  <p class="mt-1 py-2 ml-2 mr-4" style="text-align: left;">Sorted By</p>
+                  <select id="sortedby" name="sortedby" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="alphabetics" selected>Alphabetics</option>
+                    <option value="release">Release</option>
+                    <option value="rates">Rates</option>
+                    <option value="views">Views</option>
+                  </select>
+                  <select id="sort" name="sort" class="flex-grow mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="alphabetics" selected>Ascending</option>
+                    <option value="release">Descending</option>
+                  </select>
+                  <!-- button -->
+                  <div class="flex pt-2 justify-center mb-10">
+                    <a
+                        href="search-result.html"
+                        class="w-64 mt-3 px-5 p-3 text-base text-white text-center transition duration-300 ease-in-out border rounded-md cursor-pointer border-white bg-dark hover:bg-blue-dark">
+                    Submit
+                    </a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <!-- button submit -->
+          
+        </div>
+
         <div class="-mx-4 flex flex-wrap">
+          <!-- film 1 -->
+          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
+            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
+              <div class="mb-8 overflow-hidden rounded-[5px]">
+                <a href="detail-page.html" class="block">
+                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
+                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
+                </a>
+              </div>
+              <!-- title   -->
+                <h3>
+                  <a href="detail-page.html"
+                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                    [Title]
+                  </a>
+                </h3>
+                <h2>
+                  <a href="javascript:void(0)"
+                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
+                    [Year]
+                  </a>
+                </h2>
+                <!-- genre -->
+                <div class="flex-wrap mt-1">
+                  <a href="javascript:void(0)"
+                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                  [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                </div>
+                
+                <!-- rate view -->
+                <div class="flex mt-1">
+                  <p class="w-full text-base text-body-color dark:text-dark-6">
+                    Rate 3.5/5
+                  </p>
+                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
+                    19 views
+                  </p>
+                </div>                
+              
+            </div>
+          </div>
+          <!-- film 2 -->
+          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
+            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
+              <div class="mb-8 overflow-hidden rounded-[5px]">
+                <a href="detail-page.html" class="block">
+                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
+                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
+                </a>
+              </div>
+              <!-- title   -->
+                <h3>
+                  <a href="detail-page.html"
+                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                    [Title]
+                  </a>
+                </h3>
+                <h2>
+                  <a href="javascript:void(0)"
+                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
+                    [Year]
+                  </a>
+                </h2>
+                <!-- genre -->
+                <div class="flex-wrap mt-1">
+                  <a href="javascript:void(0)"
+                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                  [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                </div>
+                
+                <!-- rate view -->
+                <div class="flex mt-1">
+                  <p class="w-full text-base text-body-color dark:text-dark-6">
+                    Rate 3.5/5
+                  </p>
+                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
+                    19 views
+                  </p>
+                </div>                
+              
+            </div>
+          </div>
+          <!-- film 3 -->
+          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
+            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
+              <div class="mb-8 overflow-hidden rounded-[5px]">
+                <a href="detail-page.html" class="block">
+                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
+                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
+                </a>
+              </div>
+              <!-- title   -->
+                <h3>
+                  <a href="detail-page.html"
+                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                    [Title]
+                  </a>
+                </h3>
+                <h2>
+                  <a href="javascript:void(0)"
+                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
+                    [Year]
+                  </a>
+                </h2>
+                <!-- genre -->
+                <div class="flex-wrap mt-1">
+                  <a href="javascript:void(0)"
+                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                  [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                </div>
+                
+                <!-- rate view -->
+                <div class="flex mt-1">
+                  <p class="w-full text-base text-body-color dark:text-dark-6">
+                    Rate 3.5/5
+                  </p>
+                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
+                    19 views
+                  </p>
+                </div>                
+              
+            </div>
+          </div>
+          <!-- film 4 -->
+          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
+            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
+              <div class="mb-8 overflow-hidden rounded-[5px]">
+                <a href="detail-page.html" class="block">
+                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
+                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
+                </a>
+              </div>
+              <!-- title   -->
+                <h3>
+                  <a href="detail-page.html"
+                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                    [Title]
+                  </a>
+                </h3>
+                <h2>
+                  <a href="javascript:void(0)"
+                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
+                    [Year]
+                  </a>
+                </h2>
+                <!-- genre -->
+                <div class="flex-wrap mt-1">
+                  <a href="javascript:void(0)"
+                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                  [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                  <a href="javascript:void(0)"
+                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
+                    [Genre]
+                  </a>
+                </div>
+                
+                <!-- rate view -->
+                <div class="flex mt-1">
+                  <p class="w-full text-base text-body-color dark:text-dark-6">
+                    Rate 3.5/5
+                  </p>
+                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
+                    19 views
+                  </p>
+                </div>                
+              
+            </div>
+          </div>
           <!-- film -->
           <div class="w-full px-10 md:w-1/2 lg:w-1/5">
             <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
@@ -204,14 +631,14 @@
           <div class="w-full px-10 md:w-1/2 lg:w-1/5">
             <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
               <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
+                <a href="detail-page.html" class="block">
                   <img src="./assets/images/blog/poster-1.jpg" alt="image"
                     class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
                 </a>
               </div>
               <!-- title   -->
                 <h3>
-                  <a href="detailPage.html"
+                  <a href="detail-page.html"
                     class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
                     [Title]
                   </a>
@@ -258,14 +685,14 @@
           <div class="w-full px-10 md:w-1/2 lg:w-1/5">
             <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
               <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
+                <a href="detail-page.html" class="block">
                   <img src="./assets/images/blog/poster-1.jpg" alt="image"
                     class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
                 </a>
               </div>
               <!-- title   -->
                 <h3>
-                  <a href="detailPage.html"
+                  <a href="detail-page.html"
                     class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
                     [Title]
                   </a>
@@ -312,14 +739,14 @@
           <div class="w-full px-10 md:w-1/2 lg:w-1/5">
             <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
               <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
+                <a href="detail-page.html" class="block">
                   <img src="./assets/images/blog/poster-1.jpg" alt="image"
                     class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
                 </a>
               </div>
               <!-- title   -->
                 <h3>
-                  <a href="detailPage.html"
+                  <a href="detail-page.html"
                     class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
                     [Title]
                   </a>
@@ -366,14 +793,14 @@
           <div class="w-full px-10 md:w-1/2 lg:w-1/5">
             <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
               <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
+                <a href="detail-page.html" class="block">
                   <img src="./assets/images/blog/poster-1.jpg" alt="image"
                     class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
                 </a>
               </div>
               <!-- title   -->
                 <h3>
-                  <a href="detailPage.html"
+                  <a href="detail-page.html"
                     class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
                     [Title]
                   </a>
@@ -420,230 +847,14 @@
           <div class="w-full px-10 md:w-1/2 lg:w-1/5">
             <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
               <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
+                <a href="detail-page.html" class="block">
                   <img src="./assets/images/blog/poster-1.jpg" alt="image"
                     class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
                 </a>
               </div>
               <!-- title   -->
                 <h3>
-                  <a href="detailPage.html"
-                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
-                    [Title]
-                  </a>
-                </h3>
-                <h2>
-                  <a href="javascript:void(0)"
-                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
-                    [Year]
-                  </a>
-                </h2>
-                <!-- genre -->
-                <div class="flex-wrap mt-1">
-                  <a href="javascript:void(0)"
-                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                  [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                </div>
-                
-                <!-- rate view -->
-                <div class="flex mt-1">
-                  <p class="w-full text-base text-body-color dark:text-dark-6">
-                    Rate 3.5/5
-                  </p>
-                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
-                    19 views
-                  </p>
-                </div>                
-              
-            </div>
-          </div>
-          <!-- film -->
-          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
-            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
-              <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
-                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
-                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
-                </a>
-              </div>
-              <!-- title   -->
-                <h3>
-                  <a href="detailPage.html"
-                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
-                    [Title]
-                  </a>
-                </h3>
-                <h2>
-                  <a href="javascript:void(0)"
-                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
-                    [Year]
-                  </a>
-                </h2>
-                <!-- genre -->
-                <div class="flex-wrap mt-1">
-                  <a href="javascript:void(0)"
-                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                  [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                </div>
-                
-                <!-- rate view -->
-                <div class="flex mt-1">
-                  <p class="w-full text-base text-body-color dark:text-dark-6">
-                    Rate 3.5/5
-                  </p>
-                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
-                    19 views
-                  </p>
-                </div>                
-              
-            </div>
-          </div>
-          <!-- film -->
-          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
-            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
-              <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
-                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
-                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
-                </a>
-              </div>
-              <!-- title   -->
-                <h3>
-                  <a href="detailPage.html"
-                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
-                    [Title]
-                  </a>
-                </h3>
-                <h2>
-                  <a href="javascript:void(0)"
-                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
-                    [Year]
-                  </a>
-                </h2>
-                <!-- genre -->
-                <div class="flex-wrap mt-1">
-                  <a href="javascript:void(0)"
-                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                  [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                </div>
-                
-                <!-- rate view -->
-                <div class="flex mt-1">
-                  <p class="w-full text-base text-body-color dark:text-dark-6">
-                    Rate 3.5/5
-                  </p>
-                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
-                    19 views
-                  </p>
-                </div>                
-              
-            </div>
-          </div>
-          <!-- film -->
-          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
-            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
-              <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
-                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
-                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
-                </a>
-              </div>
-              <!-- title   -->
-                <h3>
-                  <a href="detailPage.html"
-                    class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
-                    [Title]
-                  </a>
-                </h3>
-                <h2>
-                  <a href="javascript:void(0)"
-                    class="mb-4 inline-block text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-xs lg:text-xs xl:text-xs">
-                    [Year]
-                  </a>
-                </h2>
-                <!-- genre -->
-                <div class="flex-wrap mt-1">
-                  <a href="javascript:void(0)"
-                  class="mb-3 bg-primary/[0.08] inline-block rounded-[5px] px-4 py-0.5 text-center text-xs text-dark font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                  [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                  <a href="javascript:void(0)"
-                    class="mb-3 inline-block rounded-[5px] bg-primary/[0.08] px-4 py-0.5 text-center text-xs font-medium leading-loose text-dark hover:bg-primary hover:text-white">
-                    [Genre]
-                  </a>
-                </div>
-                
-                <!-- rate view -->
-                <div class="flex mt-1">
-                  <p class="w-full text-base text-body-color dark:text-dark-6">
-                    Rate 3.5/5
-                  </p>
-                  <p class="w-full text-base text-body-color dark:text-dark-6" style="text-align: right;">
-                    19 views
-                  </p>
-                </div>                
-              
-            </div>
-          </div>
-          <!-- film -->
-          <div class="w-full px-10 md:w-1/2 lg:w-1/5">
-            <div class="wow fadeInUp group mb-10" data-wow-delay=".1s">
-              <div class="mb-8 overflow-hidden rounded-[5px]">
-                <a href="detailPage.html" class="block">
-                  <img src="./assets/images/blog/poster-1.jpg" alt="image"
-                    class="w-full transition group-hover:rotate-6 group-hover:scale-125" />
-                </a>
-              </div>
-              <!-- title   -->
-                <h3>
-                  <a href="detailPage.html"
+                  <a href="detail-page.html"
                     class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
                     [Title]
                   </a>
@@ -726,9 +937,12 @@
 
   <!-- ====== Footer Section Start -->
   <footer
-  class="relative z-10 bg-dark pt-20 lg:pt-[100px]"
+  class="z-0 pt-20 lg:pt-[100px]"
   data-wow-delay=".15s"
->
+  style="background-image: linear-gradient(180deg, rgb(17, 25, 40), rgba(0, 0, 0, 0.1)), url(assets/images/poster/background.svg);
+        backround-repeat: repeat;
+        background-size: 25%"
+  >
   <div class="container">
     <div class="-mx-4 flex flex-wrap">
       <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
@@ -808,199 +1022,14 @@
           </div>
         </div>
       </div>
-      <!-- kategori informasi -->
-      <!-- <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-        <div class="mb-10 w-full">
-          <h4 class="mb-9 text-lg font-semibold text-white">About Us</h4>
-          <ul>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                Testimonial
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
-        <div class="mb-10 w-full">
-          <h4 class="mb-9 text-lg font-semibold text-white">Features</h4>
-          <ul>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                How it works
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                Privacy policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                Terms of Service
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                Refund policy
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
-        <div class="mb-10 w-full">
-          <h4 class="mb-9 text-lg font-semibold text-white">
-            Our Products
-          </h4>
-          <ul>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                LineIcons
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                Ecommerce HTML
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                TailAdmin
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-              >
-                PlainAdmin
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
-        <div class="mb-10 w-full">
-          <h4 class="mb-9 text-lg font-semibold text-white">Latest blog</h4>
-          <div class="flex flex-col gap-8">
-            <a
-              href="blog-details.html"
-              class="group flex items-center gap-[22px]"
-            >
-              <div class="overflow-hidden rounded">
-                <img
-                  src="./assets/images/blog/blog-footer-01.jpg"
-                  alt="blog"
-                />
-              </div>
-              <span
-                class="max-w-[180px] text-base text-gray-7 group-hover:text-white"
-              >
-                I think really important to design with...
-              </span>
-            </a>
-            <a
-              href="blog-details.html"
-              class="group flex items-center gap-[22px]"
-            >
-              <div class="overflow-hidden rounded">
-                <img
-                  src="./assets/images/blog/blog-footer-02.jpg"
-                  alt="blog"
-                />
-              </div>
-              <span
-                class="max-w-[180px] text-base text-gray-7 group-hover:text-white"
-              >
-                Recognizing the need is the primary...
-              </span>
-            </a>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 
   <div
-    class="mt-12 border-t border-[#8890A4] border-opacity-40 py-8 lg:mt-[60px]"
+    class="mt-12 py-8 lg:mt-[60px]"
   >
     <div class="container">
       <div class="-mx-4 flex flex-wrap">
-        <!-- <div class="w-full px-4 md:w-2/3 lg:w-1/2">
-          <div class="my-1">
-            <div
-              class="-mx-3 flex items-center justify-center md:justify-start"
-            >
-              <a
-                href="javascript:void(0)"
-                class="px-3 text-base text-gray-7 hover:text-white hover:underline"
-              >
-                Privacy policy
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="px-3 text-base text-gray-7 hover:text-white hover:underline"
-              >
-                Legal notice
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="px-3 text-base text-gray-7 hover:text-white hover:underline"
-              >
-                Terms of service
-              </a>
-            </div>
-          </div>
-        </div> -->
         <div class="w-full px-4">
           <div class="my-1 flex justify-center md:justify-end">
             <p class="text-base text-gray-7">
@@ -1037,7 +1066,7 @@
   <script src="assets/js/main.js"></script>
   <script>
     // ==== for menu scroll
-    const pageLink = document.querySelectorAll(".ud-menu-scroll");
+  
 
     pageLink.forEach((elem) => {
       elem.addEventListener("click", (e) => {
@@ -1050,6 +1079,88 @@
     });
 
     // section menu active
+    function showSearch(){
+          const searchForm = document.querySelector('.searchForm')
+          const searchButton = document.querySelector('.searchButton')
+          const cancelButton = document.querySelector('.cancelButton')
+          
+          searchForm.style.display = "flex"
+          searchButton.style.display = "none"
+          cancelButton.style.display = "flex"
+      }
+
+    function hideSearchForm(){
+        const searchForm = document.querySelector('.searchForm')
+        const searchButton = document.querySelector('.searchButton')
+        const cancelButton = document.querySelector('.cancelButton')
+
+        searchForm.style.display = 'none'
+        cancelButton.style.display = 'none'
+        searchButton.style.display = 'flex'
+    }
+
+    function showSidebar(){
+        const sidebarButton = document.querySelector('.sidebarButton')
+        const sidebar = document.querySelector('.sidebar')
+        const closeButton = document.querySelector('.closeButton')
+
+        sidebar.style.display = 'flex'
+        sidebarButton.style.display = 'none'
+        closeButton.style.display = 'flex'
+    }
+
+    function hideSidebar(){
+        const sidebarButton = document.querySelector('.sidebarButton')
+        const sidebar = document.querySelector('.sidebar')
+        const closeButton = document.querySelector('.closeButton')
+
+        sidebar.style.display = 'none'
+        sidebarButton.style.display = 'flex'
+        closeButton.style.display = 'none'
+    }
+
+    function showFilter(){
+      const filterMobile = document.querySelector('.filterMobile')
+      const filterButton = document.querySelector('.filterButton')
+      const hideFilterButton = document.querySelector('.hideFilterButton')
+      
+      filterMobile.style.display = 'flex'
+      filterButton.style.display = 'none'
+      hideFilterButton.style.display = 'flex'
+      
+    }
+
+    function hideFilter(){
+      const filterMobile = document.querySelector('.filterMobile')
+      const filterButton = document.querySelector('.filterButton')
+      const hideFilterButton = document.querySelector('.hideFilterButton')
+      
+      filterMobile.style.display = 'none'
+      filterButton.style.display = 'flex'
+      hideFilterButton.style.display = 'none'
+    }
+
+    function showSort(){
+      const sortMobile = document.querySelector('.sortMobile')
+      const sortButton = document.querySelector('.sortButton')
+      const hideSortButton = document.querySelector('.hideSortButton')
+      
+      sortMobile.style.display = 'flex'
+      sortButton.style.display = 'none'
+      hideSortButton.style.display = 'flex'
+      
+    }
+
+    function hideSort(){
+      const sortMobile = document.querySelector('.sortMobile')
+      const sortButton = document.querySelector('.sortButton')
+      const hideSortButton = document.querySelector('.hideSortButton')
+      
+      sortMobile.style.display = 'none'
+      sortButton.style.display = 'flex'
+      hideSortButton.style.display = 'none'
+    } 
+
     function onScroll(event) {
       const sections = document.querySelectorAll(".ud-menu-scroll");
       const scrollPos =
